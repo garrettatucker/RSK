@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blogz</title>
+    <link rel="stylesheet" href="https://bootswatch.com/yeti/bootstrap.min.css" crossorigin="anonymous">
+    <style>
+        h1{
+            text-align: center;
+        }
+        .error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class='container'>
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog">Main Blog Page</a></li>
+                <li><a href="/newpost">Add a Blog Entry</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/login">Login</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class='container'>
+    <br>
+    <br>
+    <h1>{{header}}</h1>
+    
+    {% with messages = get_flashed_messages(with_categories=True) %}
+    <ul>
+    {% for category, message in messages %}
+        <li class="{{category}}">{{message}}</li>
+    {% endfor %}
+    </ul>
+    {% endwith %}
+
+    {% block content %}
+    {% endblock %}
+    
+    </div>
+</body>
+</html>

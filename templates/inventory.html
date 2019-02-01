@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!--This form allows user to add an item to the inventory-->
+<form action="/inventory" method="post">
+    <!--This sends the user back to session.html-->
+    <table class='center'>
+        <tr>
+            <td></td>
+            <td><input name="submit_button" type="submit" value="Go Back to Session" class=btn-back></td>
+        </tr>
+        <tr>
+            <td>
+                <label for="category">Type of item</label>
+            </td>
+            <td>
+                <select name="category" width=100%>
+                    <option value="meat">Meat</option>
+                    <option value="veggies">Veggies</option>
+                    <option value="fruit">Fruit</option>
+                    <option value="dessert">Dessert</option>
+                    <option value="other">Other</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="title">Name of Item</label>
+            </td>
+            <td>
+                <input type="text" name="title">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="amount">Number of Orders Available</label>  
+            </td>
+            <td>
+                <input type="number" name="amount">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="cost">Cost of Item (per order)</label>
+            </td>
+            <td>
+                <input type="number" step="any" name="cost">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="price">Price of Item (per order)</label>
+            </td>
+            <td>
+                <input type="number" step="any" name="price">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input name="submit_button" type="submit" value="Submit"  class=btn align=center></td>
+        </tr>
+    </table>
+</form>
+
+<!--This section will display the inventory items that are in the databasse already-->
+{% if items|length == 0 %}
+    <h3>No items yet.</h3>
+    {% else %}
+    <table id="inventory">
+    <tr>
+        <th>Category</th>
+        <th>Item Name</th>
+        <th>Number of Orders</th>
+        <th>Cost of Item</th>
+        <th>Selling Price</th>
+    </tr>
+    {% for item in items %}
+    <tr>
+        <td>{{item.category}}</td>
+        <td>{{item.title}}</td>
+        <td>{{item.amount}}</td>
+        <td>${{item.cost}}</td>
+        <td>${{item.price}}</td>
+    </tr>
+    {% endfor %}
+    </table>
+
+    {% endif %}
+
+{% endblock %}

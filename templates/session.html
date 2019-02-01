@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!--This form displays all initial options for the user to choose-->
+<form action="/user_session" method="post">
+    <table class=center>
+        <tr>
+            <td><input name="submit_button" type="submit" value="create order" class=btn></td>
+            <td><input name="submit_button" type="submit" value="check tips" class=btn></td>
+            <td><input name="submit_button" type="submit" value="open tables" class=btn></td>
+        </tr>
+        <tr>
+            <td><input name="submit_button" type="submit" value="pay bill" class=btn></td>
+            <td><input name="submit_button" type="submit" value="check sales" class=btn></td>
+            <td><input name="submit_button" type="submit" value="clock in/out" class=btn></td>
+        </tr>
+        <tr>
+            <td><td><input name="submit_button" type="submit" value="inventory" class=btn></td></td>
+        </tr>
+    </table>
+</form>
+{% endblock %}   

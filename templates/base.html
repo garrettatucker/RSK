@@ -1,35 +1,104 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Blogz</title>
+    <title>RSK</title>
     <link rel="stylesheet" href="https://bootswatch.com/yeti/bootstrap.min.css" crossorigin="anonymous">
     <style>
-        h1{
+        .center{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1, p, h3, h2{
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
             text-align: center;
         }
         .error{
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
             color: red;
+            text-align: center;
         }
+        .btn{
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            width: 100%;
+            background-color: grey;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        .btn-back{
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            vertical-align: center;
+            background-color: grey;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        .btn:hover, .link:hover, .btn-back:hover {
+            background-color: darkgrey;
+        }
+        .link{
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            background-color: grey;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        #inventory {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            }
+
+        #inventory td, #inventory th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            }
+
+        #inventory tr:nth-child(even){background-color: #f2f2f2;}
+
+        #inventory tr:hover {background-color: #ddd;}
+
+        #inventory th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: grey;
+            color: white;
+            }
     </style>
 </head>
 <body>
+    <!--header links at top of page-->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class='container'>
-            <ul class="nav navbar-nav">
-                <li><a href="/">Home</a></li>
-                <li><a href="/blog">Main Blog Page</a></li>
-                <li><a href="/newpost">Add a Blog Entry</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="/login">Login</a></li>
-                <li><a href="/logout">Logout</a></li>
-            </ul>
+            <table class=center>
+                <tr>
+                <td><a href="/"  class=link>Home</a></td>
+                <td><a href="/login"  class=link>Login</a></td>
+                <td><a href="/logout" class=link>Logout</a></td>
+                </tr>
+            </table>
         </div>
     </nav>
     <div class='container'>
     <br>
     <br>
+    <!--the three lines below display name of user(if logged in), the time, and the header based on which page the user is on-->
+    <h3>{{user}}</h3>
     <h1>{{header}}</h1>
+    <h2>{{time}}</h2>
     
     {% with messages = get_flashed_messages(with_categories=True) %}
     <ul>

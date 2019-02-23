@@ -1,0 +1,24 @@
+# RSK Project Outline
+
+OVERVIEW
+
+  The Restaurant Standard Kiosk (RSK) is a Point of Sale solution that will allow restaurants, and other food based businesses, the ability to move past writing paper tickets, and using old cash register systems. This project will allow them to sync orders, with the inventory they have on hand, and with their cash registers so that nothing slips through the cracks. This product will be a one stop shop for servers, cashiers, and managers to work and know what exactly is going on in the restaurant.
+  
+FEATURES
+1) User Login: Allows each employee a specific account so to allow for tracking of orders, tips, payment, etc.
+2) Inventory database: Allows users will appropriate permissions to add and remove items from the inventory database. This ensures that items only get sold if they are in stock, and lets managers know when to order what items.
+3) Order payment system: Allows orders to be paid by cash, and daily sales to be added. Once an order is paid, it is removed from the system.
+4) Timesheet: Allows each user to clock in and out to have accurate timesheets for hourly wage payments.
+
+TECHNOLOGIES:
+1) Python
+2) MySQL
+3) Flask
+4)SQLAlchemy
+
+WHAT I WILL LEARN:
+I will learn to add and remove items from a database. I will also learn how to track multiple users at once based on the amount of time they have been on the clock, and what orders they have either created or removed (after payment).
+
+PROJECT TRACKER:
+I will be using GitHub Projects for this program.
+
